@@ -2,8 +2,9 @@
 
 [ext_resource path="res://Resources/World/Bush.png" type="Texture" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3.68289, 11.5484 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.45267
+height = 11.2476
 
 [node name="Bush" type="StaticBody2D"]
 

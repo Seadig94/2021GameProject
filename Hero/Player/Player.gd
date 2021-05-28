@@ -48,10 +48,13 @@ func move_state(delta):
 
 	if Input.is_action_just_pressed("attack"):
 		state = ATTACK
+		
 	
 func attack_state(delta):
 	velocity = Vector2.ZERO
 	animationState.travel("Attack")
+	$CollisionShape2D.set_disabled(false)
 
 func attack_animation_finished():
 	state = MOVE
+	

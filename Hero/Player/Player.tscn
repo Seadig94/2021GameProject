@@ -626,6 +626,5 @@ position = Vector2( 15, 0 )
 [node name="CollisionShape2D" parent="HitboxPivot/SwordHitbox" index="0"]
 position = Vector2( 4.35787, -0.83416 )
 shape = SubResource( 35 )
-disabled = true
 
 [editable path="HitboxPivot/SwordHitbox"]

@@ -53,10 +53,7 @@ func move_state(delta):
 func attack_state(delta):
 	velocity = Vector2.ZERO
 	animationState.travel("Attack")
-	$HitboxPivot/SwordHitbox/CollisionShape2D.set_disabled(false)
-	yield(animationPlayer,"animation_finished")
-	print ("balls")
-	$HitboxPivot/SwordHitbox/CollisionShape2D.set_disabled(true)
+
 
 func attack_animation_finished():
 	state = MOVE

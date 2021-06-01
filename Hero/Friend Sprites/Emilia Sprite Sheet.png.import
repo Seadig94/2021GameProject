@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Aubrey Sprite Sheet (1).png-da2a8e7e00fb0d074ff97abcb43d22a1.stex"
+path="res://.import/Emilia Sprite Sheet.png-b9d6dbedc5524f467fa750f85d91ec15.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Friend Sprites/Aubrey Sprite Sheet (1).png"
-dest_files=[ "res://.import/Aubrey Sprite Sheet (1).png-da2a8e7e00fb0d074ff97abcb43d22a1.stex" ]
+source_file="res://Friend Sprites/Emilia Sprite Sheet.png"
+dest_files=[ "res://.import/Emilia Sprite Sheet.png-b9d6dbedc5524f467fa750f85d91ec15.stex" ]
 
 [params]
 

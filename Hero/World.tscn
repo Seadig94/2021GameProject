@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Resources/World/DirtTileset.png" type="Texture" id=4]
 [ext_resource path="res://Resources/World/CliffTileset.png" type="Texture" id=5]
 [ext_resource path="res://Grass.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Friends/Emilia.tscn" type="PackedScene" id=7]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -616,6 +617,9 @@ format = 1
 tile_data = PoolIntArray( -327670, 2, 0, -327669, 2, 1, -327668, 2, 1, -327667, 2, 1, -327666, 2, 2, -196615, 2, 196608, -196614, 2, 196609, -196613, 2, 196609, -196612, 2, 196609, -196611, 2, 196609, -196610, 2, 196609, -196609, 2, 196610, -262134, 2, 65536, -262133, 2, 65537, -262132, 2, 65537, -262131, 2, 65537, -262130, 2, 65538, -196598, 2, 65536, -196597, 2, 65537, -196596, 2, 65537, -196595, 2, 65537, -196594, 2, 65538, -131062, 2, 65536, -131061, 2, 65537, -131060, 2, 65537, -131059, 2, 65537, -131058, 2, 65538, -65526, 2, 65536, -65525, 2, 65537, -65524, 2, 65537, -65523, 2, 65537, -65522, 2, 65538, 10, 2, 131072, 11, 2, 131073, 12, 2, 131073, 13, 2, 131073, 14, 2, 131074, 524280, 2, 196608, 524281, 2, 196609, 524282, 2, 196609, 524283, 2, 196609, 524284, 2, 196609, 524285, 2, 196609, 524286, 2, 196609, 524287, 2, 196610 )
 
 [node name="YSort" type="YSort" parent="."]
+
+[node name="EmiliaTest" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 155.907, 49.6653 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 112, 56 )

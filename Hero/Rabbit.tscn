@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Enemy Sprites/Enemy bunny sprite .png" type="Texture" id=1]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Rabbit.gd" type="Script" id=3]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemy Sprites/Enemy bunny sprite hit.png" type="Texture" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -17,18 +18,27 @@ region = Rect2( 160, 160, 32, 32 )
 atlas = ExtResource( 1 )
 region = Rect2( 192, 160, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 5 )
+region = Rect2( 192, 288, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
 "loop": true,
 "name": "move",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 4 ) ],
+"loop": true,
+"name": "hit",
+"speed": 15.0
 } ]
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=6]
 radius = 6.22138
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 11.4671
 height = 0.0
 
@@ -37,21 +47,21 @@ collision_layer = 16
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 4 )
+frames = SubResource( 5 )
 animation = "move"
 frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.176773, 4.41942 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 2 )]
 collision_layer = 8
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( -0.667419, 2.33597 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Stats" parent="." instance=ExtResource( 4 )]
 max_health = 3

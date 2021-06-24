@@ -18,6 +18,9 @@ func _physics_process(delta):
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
 	knockback = area.knockback_vector * 120
+	$AnimatedSprite.play("hit")
+	yield ($AnimatedSprite,"animation_finished")
+	$AnimatedSprite.play("move")
 	
 
 func _on_Stats_no_health():

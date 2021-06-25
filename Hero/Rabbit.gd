@@ -1,6 +1,15 @@
 extends KinematicBody2D
 
+enum {
+	IDLE,
+	WANDER,
+	CHASE
+}
+
+var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
+
+var state = CHASE
 
 onready var stats = $Stats
 
@@ -14,6 +23,16 @@ func create_enemy_effect():
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
 	knockback = move_and_slide(knockback)
+
+	match state:
+		IDLE:
+			velocity = velocity.move_toward()
+	
+		WANDER:
+			pass
+			
+		CHASE:
+			pass
 
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage

@@ -598,7 +598,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [node name="World" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 159.528, 96 )
+position = Vector2( 159.882, 95.6465 )
 scale = Vector2( 0.782396, 0.709434 )
 texture = ExtResource( 3 )
 region_enabled = true

@@ -6,6 +6,10 @@ enum {
 	CHASE
 }
 
+export var ACCELERATION = 300
+export var MAX_SPEED = 50
+export var FRICTION = 200
+
 var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
 
@@ -26,7 +30,7 @@ func _physics_process(delta):
 
 	match state:
 		IDLE:
-			velocity = velocity.move_toward()
+			velocity = velocity.move_toward(Vector2.ZERO, 200 * delta)
 	
 		WANDER:
 			pass

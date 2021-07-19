@@ -1,9 +1,10 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Hero Sprites/Hero SPrte Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/SwordHitbox.gd" type="Script" id=4]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.24837
@@ -660,6 +661,10 @@ start_node = "Idle"
 radius = 8.95739
 height = 12.4098
 
+[sub_resource type="CapsuleShape2D" id=36]
+radius = 8.07596
+height = 0.0
+
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( -0.0787468, 0.15749 )
 collision_layer = 2
@@ -717,4 +722,14 @@ position = Vector2( 4.35787, -0.83416 )
 shape = SubResource( 35 )
 disabled = true
 
+[node name="Hurtbox" parent="." instance=ExtResource( 5 )]
+collision_layer = 4
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( -0.561234, -3.648 )
+shape = SubResource( 36 )
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+
 [editable path="HitboxPivot/SwordHitbox"]
+[editable path="Hurtbox"]

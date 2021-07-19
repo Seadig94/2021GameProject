@@ -61,8 +61,6 @@ func attack_state(delta):
 
 func attack_animation_finished():
 	state = MOVE
-	
-
 
 func _on_Hurtbox_area_entered(area):
-	stats.health =-1
+	stats.health -= 1

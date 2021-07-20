@@ -22,6 +22,7 @@ func seek_player():
 onready var sprite = $AnimatedSprite
 onready var stats = $Stats
 onready var playerDetectionZone = $PlayerDetectionZone
+onready var hurtbox = $Hurtbox
 
 func create_enemy_effect():
 	var EnemyEffect = load("res://Resources/Effects/EnemyEffect.tscn")
@@ -57,7 +58,7 @@ func _on_Hurtbox_area_entered(area):
 	$AnimatedSprite.play("hit")
 	yield ($AnimatedSprite,"animation_finished")
 	$AnimatedSprite.play("move")
-	
+	hurtbox.create_hit_effect()
 
 func _on_Stats_no_health():
 	create_enemy_effect()

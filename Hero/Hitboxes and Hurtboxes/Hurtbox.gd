@@ -33,7 +33,8 @@ func _on_Timer_timeout():
 
 
 func _on_Hurtbox_invincibility_started():
-	monitorable = false
+	set_deferred("monitorable", false)
+	 
 
 func _on_Hurtbox_invincibility_ended():
 	monitorable = true

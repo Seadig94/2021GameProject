@@ -12,17 +12,17 @@ export var FRICTION = 200
 
 var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
-
 var state = CHASE
 
 func seek_player():
 	if playerDetectionZone.can_see_player():
 		state = CHASE
-	
+		
 onready var sprite = $AnimatedSprite
 onready var stats = $Stats
 onready var playerDetectionZone = $PlayerDetectionZone
 onready var hurtbox = $Hurtbox
+onready var softCollision = $SoftCollision
 
 func create_enemy_effect():
 	var EnemyEffect = load("res://Resources/Effects/EnemyEffect.tscn")
@@ -50,6 +50,10 @@ func _physics_process(delta):
 			else:
 				state = IDLE
 			sprite.flip_h = -velocity.x < 0
+			
+			
+	if softCollision.is_colliding():
+		velocity += softCollision.get_push_vector() * delta * 400
 	velocity = move_and_slide(velocity)
 
 func _on_Hurtbox_area_entered(area):
@@ -63,4 +67,3 @@ func _on_Hurtbox_area_entered(area):
 func _on_Stats_no_health():
 	create_enemy_effect()
 	queue_free()
-

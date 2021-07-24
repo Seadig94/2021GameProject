@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://Grass.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Friends/Emilia.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Rabbit.tscn" type="PackedScene" id=8]
+[ext_resource path="res://UI/HeathUI.gd" type="Script" id=9]
+[ext_resource path="res://UI/HeathUI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Tree.tscn" type="PackedScene" id=11]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -680,3 +683,17 @@ position = Vector2( 224, 144 )
 
 [node name="Rabbit3" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 216, 24 )
+
+[node name="Trees" type="YSort" parent="YSort"]
+
+[node name="Tree" parent="YSort/Trees" instance=ExtResource( 11 )]
+position = Vector2( 216.876, 57.7434 )
+
+[node name="Tree2" parent="YSort/Trees" instance=ExtResource( 11 )]
+position = Vector2( 134.75, 155.708 )
+
+[node name="Tree3" parent="YSort/Trees" instance=ExtResource( 11 )]
+position = Vector2( 286, 129.958 )
+
+[node name="HeathUI" parent="." instance=ExtResource( 10 )]
+script = ExtResource( 9 )

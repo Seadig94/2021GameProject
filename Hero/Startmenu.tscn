@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Startmenu.gd" type="Script" id=1]
 [ext_resource path="res://ab4fdtqq9lh3aukjynkg.jpg" type="Texture" id=2]
@@ -7,6 +7,22 @@
 [ext_resource path="res://Select Options Sound Effect OMORI (mp3cut.net).mp3" type="AudioStream" id=5]
 [ext_resource path="res://OMORI OST - 004 Spaces In-between.mp3" type="AudioStream" id=6]
 [ext_resource path="res://picturetopeople.org-817307f0e5817ad7804fd27bb3c5503a61d740657554912453.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "FadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
 
 [node name="Startmenu" type="Control"]
 anchor_right = 1.0
@@ -60,6 +76,18 @@ texture = ExtResource( 7 )
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_right = 323.0
+margin_bottom = 183.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeOut = SubResource( 1 )
 
 [connection signal="pressed" from="titelscreen/CenterContainer/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="titelscreen/CenterContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

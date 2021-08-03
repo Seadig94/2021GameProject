@@ -4,6 +4,8 @@ extends Control
 func _on_TextureButton_pressed():
 	var musicNode = $select
 	musicNode.play()
+	var animationNode = $AnimationPlayer
+	animationNode.play()
 	print("hi")
 
 

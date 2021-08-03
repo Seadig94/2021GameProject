@@ -272,10 +272,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [  ]
+"values": [ Vector2( 0.0787468, -16.1575 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("HitboxPivot:rotation_degrees")
@@ -671,11 +671,12 @@ collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.358716, -3.30467 )
+position = Vector2( 0.0787468, -16.1575 )
 scale = Vector2( 0.838779, 0.838779 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 9
+frame = 63
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 1.21207, 1.01058 )
@@ -698,7 +699,6 @@ anims/WalkUp = SubResource( 13 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 33 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/playback = SubResource( 34 )
 parameters/Attack/blend_position = Vector2( 0, 1 )
 parameters/Idle/blend_position = Vector2( 0, 1 )
@@ -706,7 +706,7 @@ parameters/Run/blend_position = Vector2( 0, 1 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
 position = Vector2( 0, -4 )
-rotation = 1.5708
+rotation = 4.71239
 __meta__ = {
 "_gizmo_extents_": 8.0
 }
@@ -718,7 +718,7 @@ script = ExtResource( 4 )
 damage = 2
 
 [node name="CollisionShape2D" parent="HitboxPivot/SwordHitbox" index="0"]
-position = Vector2( 4.35787, -0.83416 )
+position = Vector2( 13.1575, -0.921254 )
 shape = SubResource( 35 )
 disabled = true
 

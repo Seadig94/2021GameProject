@@ -22,4 +22,8 @@ animations = [ {
 [node name="HitEffect" type="AnimatedSprite"]
 frames = SubResource( 3 )
 animation = "Animate"
+frame = 1
+playing = true
 script = ExtResource( 1 )
+
+[connection signal="animation_finished" from="." to="." method="_on_HitEffect_animation_finished"]

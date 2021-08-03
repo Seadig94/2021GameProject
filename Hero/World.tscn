@@ -605,7 +605,7 @@ position = Vector2( 159.882, 95.6465 )
 scale = Vector2( 0.782396, 0.709434 )
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 409, 265 )
+region_rect = Rect2( -1530, 460, 2360, 1760 )
 
 [node name="DirtPathTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
@@ -628,6 +628,9 @@ position = Vector2( 155.907, 49.6653 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 112, 56 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
+remote_path = NodePath("../../../Camera2D")
 
 [node name="Bushes" type="YSort" parent="YSort"]
 
@@ -695,5 +698,14 @@ position = Vector2( 134.75, 155.708 )
 [node name="Tree3" parent="YSort/Trees" instance=ExtResource( 11 )]
 position = Vector2( 286, 129.958 )
 
-[node name="HeathUI" parent="." instance=ExtResource( 10 )]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeathUI" parent="CanvasLayer" instance=ExtResource( 10 )]
 script = ExtResource( 9 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 112, 56 )
+current = true
+zoom = Vector2( 1.1, 1.1 )
+smoothing_enabled = true
+smoothing_speed = 10.0

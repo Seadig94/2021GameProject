@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/picturetopeople.org-9de19f0d07c9ad526cbe0459012044fbef5345df89e621461a.png-c3931232e0bbb17cad343220473425d9.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://picturetopeople.org-9de19f0d07c9ad526cbe0459012044fbef5345df89e621461a.png"
+dest_files=[ "res://.import/picturetopeople.org-9de19f0d07c9ad526cbe0459012044fbef5345df89e621461a.png-c3931232e0bbb17cad343220473425d9.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

@@ -6,9 +6,14 @@ func _on_TextureButton_pressed():
 	musicNode.play()
 	print("hi")
 
+
 func _on_QuitButton_pressed():
 	get_tree().quit()
 
 
-func _on_select_finished() -> void:
-	get_tree().change_scene("res://STORY.tscn")
+func _on_select_finished():
+	get_tree().change_scene("res://World.tscn")
+
+func _ready():
+	var musicNode = $music
+	musicNode.play()

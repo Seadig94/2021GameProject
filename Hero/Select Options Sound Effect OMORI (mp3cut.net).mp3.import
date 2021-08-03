@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Select Options Sound Effect OMORI (mp3cut.net).mp3-876706e62d910f0a19bddc237f978378.mp3str"
+
+[deps]
+
+source_file="res://Select Options Sound Effect OMORI (mp3cut.net).mp3"
+dest_files=[ "res://.import/Select Options Sound Effect OMORI (mp3cut.net).mp3-876706e62d910f0a19bddc237f978378.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Startmenu.gd" type="Script" id=1]
+[ext_resource path="res://ab4fdtqq9lh3aukjynkg.jpg" type="Texture" id=2]
+
+[node name="Startmenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="titelscreen" type="Sprite" parent="."]
+position = Vector2( 160.896, 91.3979 )
+scale = Vector2( 0.250345, 0.252216 )
+texture = ExtResource( 2 )
+
+[node name="CenterContainer" type="CenterContainer" parent="titelscreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -960.0
+margin_top = -483.0
+margin_right = -1300.0
+margin_bottom = -719.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="titelscreen/CenterContainer"]
+margin_left = 470.0
+margin_top = 240.0
+margin_right = 470.0
+margin_bottom = 244.0
+
+[node name="TextureButton" type="TextureButton" parent="titelscreen/CenterContainer/VBoxContainer"]
+
+[node name="QuitButton" type="TextureButton" parent="titelscreen/CenterContainer/VBoxContainer"]
+margin_top = 4.0
+margin_bottom = 4.0
+
+[node name="select" type="AudioStreamPlayer" parent="."]
+volume_db = 16.156
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[connection signal="pressed" from="titelscreen/CenterContainer/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="titelscreen/CenterContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="finished" from="select" to="." method="_on_select_finished"]

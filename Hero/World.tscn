@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://UI/HeathUI.gd" type="Script" id=9]
 [ext_resource path="res://UI/HeathUI.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Tree.tscn" type="PackedScene" id=11]
+[ext_resource path="res://FadeIn.tscn" type="PackedScene" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -743,7 +744,22 @@ position = Vector2( 286, 129.958 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HeathUI" parent="CanvasLayer" instance=ExtResource( 10 )]
+margin_left = 39.1384
+margin_top = 152.06
+margin_right = 127.138
+margin_bottom = 166.06
 script = ExtResource( 9 )
+
+[node name="FadeIn" parent="CanvasLayer" instance=ExtResource( 12 )]
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+margin_top = -90.0
+margin_bottom = -90.0
+
+[node name="ColorRect" parent="CanvasLayer/FadeIn/MarginContainer" index="0"]
+margin_right = 0.0
+margin_bottom = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 112, 56 )
@@ -751,3 +767,5 @@ current = true
 zoom = Vector2( 1.1, 1.1 )
 smoothing_enabled = true
 smoothing_speed = 10.0
+
+[editable path="CanvasLayer/FadeIn"]

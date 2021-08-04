@@ -6,6 +6,7 @@
 [node name="HeathUI" type="Control"]
 margin_right = 88.0
 margin_bottom = 14.0
+rect_scale = Vector2( 0.75, 0.75 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

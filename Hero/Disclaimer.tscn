@@ -1,13 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Startmenu.gd" type="Script" id=1]
-[ext_resource path="res://ab4fdtqq9lh3aukjynkg.jpg" type="Texture" id=2]
-[ext_resource path="res://picturetopeople.org-e886768e9be9e6cae75c00a9d57def33939e9caabe5ba13025.png" type="Texture" id=3]
-[ext_resource path="res://picturetopeople.org-9de19f0d07c9ad526cbe0459012044fbef5345df89e621461a.png" type="Texture" id=4]
+[ext_resource path="res://Disclaimer.gd" type="Script" id=1]
+[ext_resource path="res://Disclaimer.png" type="Texture" id=2]
+[ext_resource path="res://36819127-dc9e33ea-1c9c-11e8-9a93-0d3c0a674f02.png" type="Texture" id=3]
+[ext_resource path="res://this game is not suit.png" type="Texture" id=4]
 [ext_resource path="res://Select Options Sound Effect OMORI (mp3cut.net).mp3" type="AudioStream" id=5]
 [ext_resource path="res://OMORI OST - 004 Spaces In-between.mp3" type="AudioStream" id=6]
-[ext_resource path="res://picturetopeople.org-817307f0e5817ad7804fd27bb3c5503a61d740657554912453.png" type="Texture" id=7]
-[ext_resource path="res://seandiggle.png" type="Texture" id=8]
+[ext_resource path="res://easily disturbed.png" type="Texture" id=7]
+[ext_resource path="res://I know.png" type="Texture" id=8]
+[ext_resource path="res://for children.png" type="Texture" id=9]
+[ext_resource path="res://RUn.png" type="Texture" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeOut"
@@ -29,21 +31,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="titelscreen" type="Sprite" parent="."]
-position = Vector2( 160.747, 91.3979 )
-scale = Vector2( 0.250345, 0.252216 )
-texture = ExtResource( 2 )
+position = Vector2( 161.144, 89.0168 )
+scale = Vector2( 0.158849, 0.13377 )
+texture = ExtResource( 3 )
 
 [node name="CenterContainer" type="CenterContainer" parent="titelscreen"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -66.8269
-margin_top = -32.2379
-margin_right = -975.827
-margin_bottom = -433.238
+margin_left = -256.697
+margin_top = -79.7046
+margin_right = -1165.7
+margin_bottom = -480.705
 rect_min_size = Vector2( 200, 200 )
 rect_scale = Vector2( 0.395, 0.436 )
 __meta__ = {
@@ -51,36 +54,48 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="titelscreen/CenterContainer"]
-margin_right = 371.0
-margin_bottom = 319.0
+margin_left = 388.0
+margin_top = 363.0
+margin_right = 861.0
+margin_bottom = 669.0
 
 [node name="TextureButton" type="TextureButton" parent="titelscreen/CenterContainer/VBoxContainer"]
-margin_right = 371.0
-margin_bottom = 139.0
-texture_normal = ExtResource( 3 )
+margin_right = 473.0
+margin_bottom = 159.0
+texture_normal = ExtResource( 8 )
 
 [node name="QuitButton" type="TextureButton" parent="titelscreen/CenterContainer/VBoxContainer"]
-margin_top = 143.0
-margin_right = 371.0
-margin_bottom = 319.0
-texture_normal = ExtResource( 4 )
-
-[node name="Sean" type="Sprite" parent="."]
-position = Vector2( 16.8198, 177.342 )
-scale = Vector2( 0.0341976, 0.0293965 )
-texture = ExtResource( 8 )
+margin_top = 163.0
+margin_right = 473.0
+margin_bottom = 306.0
+texture_normal = ExtResource( 10 )
 
 [node name="select" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 volume_db = 3.029
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 162.786, 47.866 )
-scale = Vector2( 0.184926, 0.171454 )
-texture = ExtResource( 7 )
+position = Vector2( 157.161, 41.318 )
+scale = Vector2( 0.0833068, 0.0772378 )
+texture = ExtResource( 2 )
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+
+[node name="not suitable" type="Sprite" parent="."]
+position = Vector2( 122.638, 57.4626 )
+scale = Vector2( 0.0427419, 0.0532069 )
+texture = ExtResource( 4 )
+
+[node name="for children" type="Sprite" parent="."]
+position = Vector2( 190.75, 57.2099 )
+scale = Vector2( 0.043, 0.053 )
+texture = ExtResource( 9 )
+
+[node name="easily disturbed" type="Sprite" parent="."]
+position = Vector2( 156.753, 70.3147 )
+scale = Vector2( 0.043, 0.053 )
+texture = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeOut = SubResource( 1 )
@@ -91,13 +106,10 @@ margin_bottom = 183.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 0 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
 
 [connection signal="pressed" from="titelscreen/CenterContainer/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="titelscreen/CenterContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

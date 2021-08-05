@@ -1,22 +1,178 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Friend Sprites/Emilia Sprite Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Friends/Emilia.gd" type="Script" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4.83837, 5.7841 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 4.78678
+height = 8.7565
 
-[node name="EmiliaTest" type="StaticBody2D"]
+[sub_resource type="Animation" id=2]
+resource_name = "EmiliaDownWalk"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 1, 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "EmiliaIdleDown"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "EmiliaIdleLeft"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 13 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "EmiliaIdleRight"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 25 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "EmiliaIdleUp"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 37 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 13, 14, 13, 12 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "EmiliaRightWalk"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 25, 26, 25, 24 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "EmiliaWalkUp"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 5, 4, 4 ]
+}
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 226.532
+
+[node name="Emilia" type="KinematicBody2D"]
 script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.776267, 0.776267 )
 texture = ExtResource( 1 )
 hframes = 9
 vframes = 9
-frame = 61
+frame = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.137524, 6.33401 )
-rotation = 1.5708
-shape = SubResource( 1 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/EmiliaDownWalk = SubResource( 2 )
+anims/EmiliaIdleDown = SubResource( 3 )
+anims/EmiliaIdleLeft = SubResource( 4 )
+anims/EmiliaIdleRight = SubResource( 5 )
+anims/EmiliaIdleUp = SubResource( 6 )
+anims/EmiliaLeftWalk = SubResource( 7 )
+anims/EmiliaRightWalk = SubResource( 8 )
+anims/EmiliaWalkUp = SubResource( 9 )
+
+[node name="EmiliaFollow" type="Area2D" parent="."]
+position = Vector2( -0.630669, 3.36359 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="EmiliaFollow"]
+shape = SubResource( 10 )
+
+[connection signal="body_entered" from="EmiliaFollow" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="EmiliaFollow" to="." method="_on_Area2D_body_exited"]

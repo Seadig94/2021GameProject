@@ -36,17 +36,17 @@ __meta__ = {
 }
 
 [node name="titelscreen" type="Sprite" parent="."]
-position = Vector2( 161.144, 89.0168 )
+position = Vector2( 163.525, 90.099 )
 scale = Vector2( 0.158849, 0.13377 )
 texture = ExtResource( 3 )
 
 [node name="CenterContainer" type="CenterContainer" parent="titelscreen"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -256.697
-margin_top = -79.7046
-margin_right = -1165.7
-margin_bottom = -480.705
+margin_left = -289.175
+margin_top = -73.7712
+margin_right = -1198.17
+margin_bottom = -474.771
 rect_min_size = Vector2( 200, 200 )
 rect_scale = Vector2( 0.395, 0.436 )
 __meta__ = {
@@ -54,9 +54,9 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="titelscreen/CenterContainer"]
-margin_left = 388.0
+margin_left = 389.0
 margin_top = 363.0
-margin_right = 861.0
+margin_right = 862.0
 margin_bottom = 669.0
 
 [node name="TextureButton" type="TextureButton" parent="titelscreen/CenterContainer/VBoxContainer"]

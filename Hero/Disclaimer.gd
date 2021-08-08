@@ -5,7 +5,7 @@ func _on_TextureButton_pressed():
 	musicNode.play()
 	var animationNode = $AnimationPlayer
 	animationNode.play("FadeOut")
-	print("hi")
+	
 
 
 func _on_QuitButton_pressed():

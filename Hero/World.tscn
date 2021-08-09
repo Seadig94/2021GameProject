@@ -962,6 +962,7 @@ position = Vector2( -0.44445, 18.0002 )
 scale = Vector2( 1.86223, 1.75112 )
 frames = SubResource( 61 )
 animation = "HeroNormal"
+frame = 2
 playing = true
 
 [node name="EmiliaFrame" type="Sprite" parent="CanvasLayer"]
@@ -974,7 +975,7 @@ position = Vector2( -0.444, 18 )
 scale = Vector2( 1.862, 1.751 )
 frames = SubResource( 65 )
 animation = "EmiliaNormal"
-frame = 2
+frame = 1
 playing = true
 
 [node name="KevFrame" type="Sprite" parent="CanvasLayer"]
@@ -987,7 +988,6 @@ position = Vector2( -0.444, 18 )
 scale = Vector2( 1.862, 1.751 )
 frames = SubResource( 69 )
 animation = "KevNormal"
-frame = 1
 playing = true
 
 [node name="YuFrame" type="Sprite" parent="CanvasLayer"]
@@ -1000,7 +1000,7 @@ position = Vector2( -0.444, 18 )
 scale = Vector2( 1.862, 1.751 )
 frames = SubResource( 73 )
 animation = "YuNormal"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

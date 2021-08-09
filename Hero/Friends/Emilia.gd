@@ -4,6 +4,12 @@ var speed = 80
 var motion = Vector2.ZERO
 var player = null
 
+var velocity = Vector2.ZERO
+
+onready var animationPlayer = $AnimationPlayer
+onready var animationTree = $AnimationTree2
+onready var animationState = animationTree.get("parameter/playback")
+
 func _physics_process(delta):
 	
 	if player:
@@ -12,7 +18,6 @@ func _physics_process(delta):
 		if d > 20:
 			motion = position.direction_to(player.position) * speed
 			motion = move_and_slide(motion)
-
 
 func _on_Area2D_body_entered(body):
 	print("entered")

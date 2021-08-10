@@ -311,7 +311,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -4.37297, 0.109703 ) ]
+"values": [ Vector2( 2.5567, -1.20132 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -732,12 +732,12 @@ collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.884278, -1.72799 )
+position = Vector2( 0.0787468, -16.1575 )
 scale = Vector2( 0.838779, 0.838779 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 9
-frame = 6
+frame = 68
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.297464, -2.78148 )
@@ -769,7 +769,7 @@ parameters/Run/blend_position = Vector2( 0.0200927, 0.43237 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
 position = Vector2( 0, -4 )
-rotation = 1.5708
+rotation = 4.71239
 __meta__ = {
 "_gizmo_extents_": 8.0
 }
@@ -781,7 +781,7 @@ script = ExtResource( 4 )
 damage = 2
 
 [node name="CollisionShape2D" parent="HitboxPivot/SwordHitbox" index="0"]
-position = Vector2( 4.35787, -0.83416 )
+position = Vector2( 2.5567, -1.20132 )
 shape = SubResource( 44 )
 disabled = true
 

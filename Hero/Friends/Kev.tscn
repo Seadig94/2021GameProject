@@ -1,40 +1,243 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Friend Sprites/DW_KEL (1).png" type="Texture" id=1]
+[ext_resource path="res://Friends/Kev.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.78678
 height = 8.7565
 
 [sub_resource type="Animation" id=2]
-resource_name = "KevIdleDown"
+resource_name = "KevDownWalk"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 3, 2, 1 ]
+}
 
-[sub_resource type="AnimationNodeStateMachine" id=3]
+[sub_resource type="Animation" id=3]
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=4]
+[sub_resource type="Animation" id=4]
+resource_name = "KevIdleLeft"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 14 ]
+}
 
-[sub_resource type="CircleShape2D" id=5]
-radius = 40.7153
+[sub_resource type="Animation" id=5]
+resource_name = "KevIdleRight"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 26 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "KevIdleUp"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 38 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "KevLeftWalk"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 14, 15, 14, 13 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "KevUpWalk"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 38, 37, 38, 39 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "KevWalkRight"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 26, 27, 26, 25 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=25]
+animation = "KevIdleLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=26]
+animation = "KevIdleRight"
+
+[sub_resource type="AnimationNodeAnimation" id=27]
+animation = "KevIdleDown"
+
+[sub_resource type="AnimationNodeAnimation" id=28]
+animation = "KevIdleUp"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=29]
+blend_point_0/node = SubResource( 25 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 26 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 27 )
+blend_point_2/pos = Vector2( 0, 1 )
+blend_point_3/node = SubResource( 28 )
+blend_point_3/pos = Vector2( 0, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=30]
+animation = "KevLeftWalk"
+
+[sub_resource type="AnimationNodeAnimation" id=31]
+animation = "KevDownWalk"
+
+[sub_resource type="AnimationNodeAnimation" id=32]
+animation = "KevWalkRight"
+
+[sub_resource type="AnimationNodeAnimation" id=33]
+animation = "KevUpWalk"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=34]
+blend_point_0/node = SubResource( 30 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 31 )
+blend_point_1/pos = Vector2( 0, 1 )
+blend_point_2/node = SubResource( 32 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 33 )
+blend_point_3/pos = Vector2( 0, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+
+[sub_resource type="AnimationNodeStateMachine" id=37]
+states/KevIdle/node = SubResource( 29 )
+states/KevIdle/position = Vector2( 395, 136 )
+states/KevRun/node = SubResource( 34 )
+states/KevRun/position = Vector2( 661, 136 )
+transitions = [ "KevIdle", "KevRun", SubResource( 35 ), "KevRun", "KevIdle", SubResource( 36 ) ]
+start_node = "KevIdle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=38]
+
+[sub_resource type="CircleShape2D" id=24]
+radius = 78.3342
 
 [node name="Kev" type="KinematicBody2D"]
+collision_layer = 64
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -8 )
 scale = Vector2( 0.776267, 0.776267 )
-hframes = 9
-vframes = 8
-frame = 4
+texture = ExtResource( 1 )
+hframes = 13
+vframes = 13
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -6 )
 shape = SubResource( 1 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/KevIdleDown = SubResource( 2 )
+[node name="AnimationPlayerKev" type="AnimationPlayer" parent="."]
+anims/KevDownWalk = SubResource( 2 )
+anims/KevIdleDown = SubResource( 3 )
+anims/KevIdleLeft = SubResource( 4 )
+anims/KevIdleRight = SubResource( 5 )
+anims/KevIdleUp = SubResource( 6 )
+anims/KevLeftWalk = SubResource( 7 )
+anims/KevUpWalk = SubResource( 8 )
+anims/KevWalkRight = SubResource( 9 )
 
-[node name="AnimationTree2" type="AnimationTree" parent="."]
-tree_root = SubResource( 3 )
-anim_player = NodePath("../AnimationPlayer")
+[node name="AnimationTreeKev" type="AnimationTree" parent="."]
+tree_root = SubResource( 37 )
+anim_player = NodePath("../AnimationPlayerKev")
 active = true
-parameters/playback = SubResource( 4 )
+parameters/playback = SubResource( 38 )
+parameters/KevIdle/blend_position = Vector2( -0.0644911, 0.0775862 )
+parameters/KevRun/blend_position = Vector2( 0.0396271, -0.801724 )
 
 [node name="KevFollow" type="Area2D" parent="."]
 visible = false
@@ -42,4 +245,6 @@ position = Vector2( -0.630669, 3.36359 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="KevFollow"]
 position = Vector2( 0.944931, -1.88988 )
-shape = SubResource( 5 )
+shape = SubResource( 24 )
+
+[connection signal="body_entered" from="KevFollow" to="." method="_on_KevFollow_body_entered"]

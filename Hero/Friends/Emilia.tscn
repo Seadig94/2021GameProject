@@ -142,49 +142,49 @@ tracks/0/keys = {
 "values": [ 3, 5, 4, 4 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=10]
+[sub_resource type="AnimationNodeAnimation" id=25]
 animation = "EmiliaIdleLeft"
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=26]
 animation = "EmiliaIdleDown"
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=27]
 animation = "EmiliaIdleRight"
 
-[sub_resource type="AnimationNodeAnimation" id=13]
+[sub_resource type="AnimationNodeAnimation" id=28]
 animation = "EmiliaIdleUp"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=14]
-blend_point_0/node = SubResource( 10 )
+blend_point_0/node = SubResource( 25 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 11 )
+blend_point_1/node = SubResource( 26 )
 blend_point_1/pos = Vector2( 0, 1 )
-blend_point_2/node = SubResource( 12 )
+blend_point_2/node = SubResource( 27 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 13 )
+blend_point_3/node = SubResource( 28 )
 blend_point_3/pos = Vector2( 0, -1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=15]
+[sub_resource type="AnimationNodeAnimation" id=29]
 animation = "EmiliaLeftWalk"
 
-[sub_resource type="AnimationNodeAnimation" id=16]
+[sub_resource type="AnimationNodeAnimation" id=30]
 animation = "EmiliaDownWalk"
 
-[sub_resource type="AnimationNodeAnimation" id=17]
+[sub_resource type="AnimationNodeAnimation" id=31]
 animation = "EmiliaRightWalk"
 
-[sub_resource type="AnimationNodeAnimation" id=18]
+[sub_resource type="AnimationNodeAnimation" id=32]
 animation = "EmiliaWalkUp"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=19]
-blend_point_0/node = SubResource( 15 )
+blend_point_0/node = SubResource( 29 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 16 )
+blend_point_1/node = SubResource( 30 )
 blend_point_1/pos = Vector2( 0, 1 )
-blend_point_2/node = SubResource( 17 )
+blend_point_2/node = SubResource( 31 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 18 )
+blend_point_3/node = SubResource( 32 )
 blend_point_3/pos = Vector2( 0, -1 )
 blend_mode = 1
 
@@ -194,7 +194,7 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachine" id=22]
 states/EmiliaIdle/node = SubResource( 14 )
-states/EmiliaIdle/position = Vector2( 460, 118 )
+states/EmiliaIdle/position = Vector2( 456, 118 )
 states/EmiliaRun/node = SubResource( 19 )
 states/EmiliaRun/position = Vector2( 759, 118 )
 transitions = [ "EmiliaIdle", "EmiliaRun", SubResource( 20 ), "EmiliaRun", "EmiliaIdle", SubResource( 21 ) ]
@@ -215,7 +215,6 @@ scale = Vector2( 0.776267, 0.776267 )
 texture = ExtResource( 1 )
 hframes = 9
 vframes = 9
-frame = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -6 )
@@ -236,8 +235,8 @@ tree_root = SubResource( 22 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 23 )
-parameters/EmiliaIdle/blend_position = Vector2( 0, 0 )
-parameters/EmiliaRun/blend_position = Vector2( 0, 0 )
+parameters/EmiliaIdle/blend_position = Vector2( -0.732612, -0.0172414 )
+parameters/EmiliaRun/blend_position = Vector2( -0.700155, 0.0898876 )
 
 [node name="EmiliaFollow" type="Area2D" parent="."]
 visible = false

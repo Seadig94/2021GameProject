@@ -742,11 +742,11 @@ tile_data = PoolIntArray( -1114119, 2, 3, -1114117, 2, 196611, -1114115, 2, 1966
 
 [node name="YSort" type="YSort" parent="."]
 
+[node name="Yu" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 184, 56 )
+
 [node name="Kev" parent="YSort" instance=ExtResource( 26 )]
 position = Vector2( 160, 56 )
-
-[node name="Yu" parent="YSort/Kev" instance=ExtResource( 27 )]
-position = Vector2( 24, 0 )
 
 [node name="EmiliaTest" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 136, 56 )
@@ -970,7 +970,6 @@ position = Vector2( -0.44445, 18.0002 )
 scale = Vector2( 1.86223, 1.75112 )
 frames = SubResource( 61 )
 animation = "HeroNormal"
-frame = 2
 playing = true
 
 [node name="EmiliaFrame" type="Sprite" parent="CanvasLayer"]
@@ -983,7 +982,7 @@ position = Vector2( -0.444, 18 )
 scale = Vector2( 1.862, 1.751 )
 frames = SubResource( 65 )
 animation = "EmiliaNormal"
-frame = 1
+frame = 2
 playing = true
 
 [node name="KevFrame" type="Sprite" parent="CanvasLayer"]
@@ -996,6 +995,7 @@ position = Vector2( -0.444, 18 )
 scale = Vector2( 1.862, 1.751 )
 frames = SubResource( 69 )
 animation = "KevNormal"
+frame = 1
 playing = true
 
 [node name="YuFrame" type="Sprite" parent="CanvasLayer"]
@@ -1008,7 +1008,7 @@ position = Vector2( -0.444, 18 )
 scale = Vector2( 1.862, 1.751 )
 frames = SubResource( 73 )
 animation = "YuNormal"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -142,65 +142,65 @@ tracks/0/keys = {
 "values": [ 26, 27, 26, 25 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=25]
+[sub_resource type="AnimationNodeAnimation" id=10]
 animation = "KevIdleLeft"
 
-[sub_resource type="AnimationNodeAnimation" id=26]
+[sub_resource type="AnimationNodeAnimation" id=11]
 animation = "KevIdleRight"
 
-[sub_resource type="AnimationNodeAnimation" id=27]
+[sub_resource type="AnimationNodeAnimation" id=12]
 animation = "KevIdleDown"
 
-[sub_resource type="AnimationNodeAnimation" id=28]
+[sub_resource type="AnimationNodeAnimation" id=13]
 animation = "KevIdleUp"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=29]
-blend_point_0/node = SubResource( 25 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=14]
+blend_point_0/node = SubResource( 10 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 26 )
+blend_point_1/node = SubResource( 11 )
 blend_point_1/pos = Vector2( 1, 0 )
-blend_point_2/node = SubResource( 27 )
+blend_point_2/node = SubResource( 12 )
 blend_point_2/pos = Vector2( 0, 1 )
-blend_point_3/node = SubResource( 28 )
+blend_point_3/node = SubResource( 13 )
 blend_point_3/pos = Vector2( 0, -1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=30]
+[sub_resource type="AnimationNodeAnimation" id=15]
 animation = "KevLeftWalk"
 
-[sub_resource type="AnimationNodeAnimation" id=31]
+[sub_resource type="AnimationNodeAnimation" id=16]
 animation = "KevDownWalk"
 
-[sub_resource type="AnimationNodeAnimation" id=32]
+[sub_resource type="AnimationNodeAnimation" id=17]
 animation = "KevWalkRight"
 
-[sub_resource type="AnimationNodeAnimation" id=33]
+[sub_resource type="AnimationNodeAnimation" id=18]
 animation = "KevUpWalk"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=34]
-blend_point_0/node = SubResource( 30 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=19]
+blend_point_0/node = SubResource( 15 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 31 )
+blend_point_1/node = SubResource( 16 )
 blend_point_1/pos = Vector2( 0, 1 )
-blend_point_2/node = SubResource( 32 )
+blend_point_2/node = SubResource( 17 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 33 )
+blend_point_3/node = SubResource( 18 )
 blend_point_3/pos = Vector2( 0, -1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
 
-[sub_resource type="AnimationNodeStateMachine" id=37]
-states/KevIdle/node = SubResource( 29 )
+[sub_resource type="AnimationNodeStateMachine" id=22]
+states/KevIdle/node = SubResource( 14 )
 states/KevIdle/position = Vector2( 395, 136 )
-states/KevRun/node = SubResource( 34 )
+states/KevRun/node = SubResource( 19 )
 states/KevRun/position = Vector2( 661, 136 )
-transitions = [ "KevIdle", "KevRun", SubResource( 35 ), "KevRun", "KevIdle", SubResource( 36 ) ]
+transitions = [ "KevIdle", "KevRun", SubResource( 20 ), "KevRun", "KevIdle", SubResource( 21 ) ]
 start_node = "KevIdle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=38]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=23]
 
 [sub_resource type="CircleShape2D" id=24]
 radius = 78.3342
@@ -232,10 +232,10 @@ anims/KevUpWalk = SubResource( 8 )
 anims/KevWalkRight = SubResource( 9 )
 
 [node name="AnimationTreeKev" type="AnimationTree" parent="."]
-tree_root = SubResource( 37 )
+tree_root = SubResource( 22 )
 anim_player = NodePath("../AnimationPlayerKev")
 active = true
-parameters/playback = SubResource( 38 )
+parameters/playback = SubResource( 23 )
 parameters/KevIdle/blend_position = Vector2( -0.0644911, 0.0775862 )
 parameters/KevRun/blend_position = Vector2( 0.0396271, -0.801724 )
 

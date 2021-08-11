@@ -143,66 +143,66 @@ tracks/0/keys = {
 "values": [ 37, 38, 37, 36 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=13]
+[sub_resource type="AnimationNodeAnimation" id=10]
 animation = "YuIdleLeft"
 
-[sub_resource type="AnimationNodeAnimation" id=14]
+[sub_resource type="AnimationNodeAnimation" id=11]
 animation = "YuIdleDown"
 
-[sub_resource type="AnimationNodeAnimation" id=15]
+[sub_resource type="AnimationNodeAnimation" id=12]
 animation = "YuIdleRight"
 
-[sub_resource type="AnimationNodeAnimation" id=16]
+[sub_resource type="AnimationNodeAnimation" id=13]
 animation = "YuIdleUp"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=17]
-blend_point_0/node = SubResource( 13 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=14]
+blend_point_0/node = SubResource( 10 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 14 )
+blend_point_1/node = SubResource( 11 )
 blend_point_1/pos = Vector2( 0, 1 )
-blend_point_2/node = SubResource( 15 )
+blend_point_2/node = SubResource( 12 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 16 )
+blend_point_3/node = SubResource( 13 )
 blend_point_3/pos = Vector2( 0, -1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=18]
+[sub_resource type="AnimationNodeAnimation" id=15]
 animation = "YuLeftWalk"
 
-[sub_resource type="AnimationNodeAnimation" id=19]
+[sub_resource type="AnimationNodeAnimation" id=16]
 animation = "YuDownWalk"
 
-[sub_resource type="AnimationNodeAnimation" id=20]
+[sub_resource type="AnimationNodeAnimation" id=17]
 animation = "YuRightWalk"
 
-[sub_resource type="AnimationNodeAnimation" id=21]
+[sub_resource type="AnimationNodeAnimation" id=18]
 animation = "YuWalkUp"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=22]
-blend_point_0/node = SubResource( 18 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=19]
+blend_point_0/node = SubResource( 15 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 19 )
+blend_point_1/node = SubResource( 16 )
 blend_point_1/pos = Vector2( 0, 1 )
-blend_point_2/node = SubResource( 20 )
+blend_point_2/node = SubResource( 17 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 21 )
+blend_point_3/node = SubResource( 18 )
 blend_point_3/pos = Vector2( 0, -1 )
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
 
-[sub_resource type="AnimationNodeStateMachine" id=11]
-states/YuIdle/node = SubResource( 17 )
+[sub_resource type="AnimationNodeStateMachine" id=22]
+states/YuIdle/node = SubResource( 14 )
 states/YuIdle/position = Vector2( 370, 110 )
-states/YuRun/node = SubResource( 22 )
+states/YuRun/node = SubResource( 19 )
 states/YuRun/position = Vector2( 610, 110 )
-transitions = [ "YuIdle", "YuRun", SubResource( 23 ), "YuRun", "YuIdle", SubResource( 24 ) ]
+transitions = [ "YuIdle", "YuRun", SubResource( 20 ), "YuRun", "YuIdle", SubResource( 21 ) ]
 start_node = "YuIdle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=23]
 
-[sub_resource type="CircleShape2D" id=10]
+[sub_resource type="CircleShape2D" id=24]
 radius = 48.9935
 
 [node name="Yu" type="KinematicBody2D"]
@@ -232,10 +232,10 @@ anims/YuRightWalk = SubResource( 8 )
 anims/YuWalkUp = SubResource( 9 )
 
 [node name="AnimationTreeYu" type="AnimationTree" parent="."]
-tree_root = SubResource( 11 )
+tree_root = SubResource( 22 )
 anim_player = NodePath("../AnimationPlayerYu")
 active = true
-parameters/playback = SubResource( 12 )
+parameters/playback = SubResource( 23 )
 parameters/YuIdle/blend_position = Vector2( -0.000777006, 0 )
 parameters/YuRun/blend_position = Vector2( -0.000777006, -0.00862074 )
 
@@ -244,6 +244,6 @@ position = Vector2( -0.630669, 3.36359 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="YuFollow"]
 position = Vector2( 0.944931, -1.88988 )
-shape = SubResource( 10 )
+shape = SubResource( 24 )
 
 [connection signal="body_entered" from="YuFollow" to="." method="_on_YuFollow_body_entered"]

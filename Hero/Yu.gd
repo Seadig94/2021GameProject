@@ -12,8 +12,6 @@ onready var animationTreeYu = $AnimationTreeYu
 onready var animationState = animationTreeYu.get("parameters/playback")
 
 func _physics_process(delta):
-	
-	
 	if player:
 		var d = global_position.distance_to(player.global_position)
 		print("d",d)
@@ -25,8 +23,7 @@ func _physics_process(delta):
 		else:
 			animationTreeYu.set("parameters/YuIdle/blend_position", motion)
 			animationState.travel("YuIdle")
-
-	
+			
 func _on_YuFollow_body_entered(body):
 	print("entered")
 	if body.is_in_group("Player"):

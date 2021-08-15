@@ -2,9 +2,8 @@ extends Node
 onready var warning = AudioStreamPlayer.new()
 
 func warning_sound(sound):
-	if warning.playing == false:
-		warning.stream = load(sound)
-		warning.play()
+	warning.stream = load(sound)
+	warning.play()
 
 func _ready():
 	self.add_child(warning)

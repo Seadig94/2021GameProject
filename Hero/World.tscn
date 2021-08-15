@@ -616,39 +616,39 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 2/z_index = 0
 
 [sub_resource type="AtlasTexture" id=55]
-atlas = ExtResource( 17 )
+atlas = ExtResource( 19 )
 region = Rect2( 0, 0, 100, 100 )
 
 [sub_resource type="AtlasTexture" id=56]
-atlas = ExtResource( 17 )
+atlas = ExtResource( 19 )
 region = Rect2( 100, 0, 100, 100 )
 
 [sub_resource type="AtlasTexture" id=57]
-atlas = ExtResource( 17 )
+atlas = ExtResource( 19 )
 region = Rect2( 200, 0, 100, 100 )
 
 [sub_resource type="AtlasTexture" id=58]
-atlas = ExtResource( 19 )
+atlas = ExtResource( 17 )
 region = Rect2( 0, 0, 100, 100 )
 
 [sub_resource type="AtlasTexture" id=59]
-atlas = ExtResource( 19 )
+atlas = ExtResource( 17 )
 region = Rect2( 100, 0, 100, 100 )
 
 [sub_resource type="AtlasTexture" id=60]
-atlas = ExtResource( 19 )
+atlas = ExtResource( 17 )
 region = Rect2( 200, 0, 100, 100 )
 
 [sub_resource type="SpriteFrames" id=61]
 animations = [ {
 "frames": [ SubResource( 55 ), SubResource( 56 ), SubResource( 57 ) ],
 "loop": true,
-"name": "HeroHurt",
+"name": "HeroDead",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ) ],
 "loop": true,
-"name": "HeroDead",
+"name": "HeroHurt",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ) ],
@@ -744,7 +744,7 @@ tile_data = PoolIntArray( -1114119, 2, 3, -1114117, 2, 196611, -1114115, 2, 1966
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Yu" parent="YSort" instance=ExtResource( 27 )]
-position = Vector2( 184, 56 )
+position = Vector2( 148.364, 42.1911 )
 
 [node name="Kev" parent="YSort" instance=ExtResource( 26 )]
 position = Vector2( 160, 56 )
@@ -971,7 +971,7 @@ position = Vector2( -0.44445, 18.0002 )
 scale = Vector2( 1.86223, 1.75112 )
 frames = SubResource( 61 )
 animation = "HeroNormal"
-frame = 1
+frame = 2
 playing = true
 
 [node name="EmiliaFrame" type="Sprite" parent="CanvasLayer"]
@@ -984,6 +984,7 @@ position = Vector2( -0.444, 18 )
 scale = Vector2( 1.862, 1.751 )
 frames = SubResource( 65 )
 animation = "EmiliaNormal"
+frame = 1
 playing = true
 
 [node name="KevFrame" type="Sprite" parent="CanvasLayer"]
@@ -996,7 +997,6 @@ position = Vector2( -0.444, 18 )
 scale = Vector2( 1.862, 1.751 )
 frames = SubResource( 69 )
 animation = "KevNormal"
-frame = 2
 playing = true
 
 [node name="YuFrame" type="Sprite" parent="CanvasLayer"]
@@ -1009,6 +1009,7 @@ position = Vector2( -0.444, 18 )
 scale = Vector2( 1.862, 1.751 )
 frames = SubResource( 73 )
 animation = "YuNormal"
+frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

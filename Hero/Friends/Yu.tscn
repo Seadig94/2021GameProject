@@ -240,6 +240,7 @@ parameters/YuIdle/blend_position = Vector2( -0.000777006, 0 )
 parameters/YuRun/blend_position = Vector2( -0.000777006, -0.00862074 )
 
 [node name="YuFollow" type="Area2D" parent="."]
+visible = false
 position = Vector2( -0.630669, 3.36359 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="YuFollow"]

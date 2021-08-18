@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Something Sound Effect - OMORI.mp3-c9fca9a5df09be86747ad22ceea343ce.mp3str"
+
+[deps]
+
+source_file="res://Sound/Something Sound Effect - OMORI.mp3"
+dest_files=[ "res://.import/Something Sound Effect - OMORI.mp3-c9fca9a5df09be86747ad22ceea343ce.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

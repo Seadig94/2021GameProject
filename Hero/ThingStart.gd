@@ -7,7 +7,7 @@ enum {
 }
 
 export var ACCELERATION = 300
-export var MAX_SPEED = 50
+export var MAX_SPEED = 100
 export var FRICTION = 200
 export var WANDER_TARGET_RANGE = 4
 
@@ -45,25 +45,6 @@ func _physics_process(delta):
 	knockback = move_and_slide(knockback)
 
 	match state:
-		IDLE:
-			velocity = velocity.move_toward(Vector2.ZERO, 200 * delta)
-			seek_player()
-			
-			if wanderController.get_time_left() == 0:
-				state = pick_random_state([IDLE, WANDER])
-				wanderController.start_wander_timer(rand_range(1, 3))
-		WANDER:
-			seek_player()
-			if wanderController.get_time_left() == 0:
-				state = pick_random_state([IDLE, WANDER])
-				wanderController.start_wander_timer(rand_range(1, 3))
-			
-			var direction = global_position.direction_to(wanderController.target_position)
-			velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
-			sprite.flip_h = -velocity.x < 0
-			if global_position.distance_to(wanderController.target_position) <= WANDER_TARGET_RANGE:
-				state = pick_random_state([IDLE, WANDER])
-				wanderController.start_wander_timer(rand_range(1, 3))
 		CHASE:
 			var player = playerDetectionZone.player
 			if player != null:
@@ -73,21 +54,3 @@ func _physics_process(delta):
 				state = IDLE
 			sprite.flip_h = -velocity.x < 0
 			
-			
-	if softCollision.is_colliding():
-		velocity += softCollision.get_push_vector() * delta * 400
-	velocity = move_and_slide(velocity)
-
-
-func _on_Hurtbox_area_entered(area):
-	stats.health -= area.damage
-	knockback = area.knockback_vector * 120
-	$AnimatedSprite.play("hit")
-	SoundPlayer.play("res://Sound/Slice.mp3")
-	yield ($AnimatedSprite,"animation_finished")
-	$AnimatedSprite.play("move")
-	hurtbox.create_hit_effect()
-
-func _on_Stats_no_health():
-	create_enemy_effect()
-	queue_free()

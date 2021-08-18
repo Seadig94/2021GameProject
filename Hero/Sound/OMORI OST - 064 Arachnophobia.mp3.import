@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/OMORI OST - 064 Arachnophobia.mp3-b01e5703f9a78281c462718cd135fbd5.mp3str"
+
+[deps]
+
+source_file="res://Sound/OMORI OST - 064 Arachnophobia.mp3"
+dest_files=[ "res://.import/OMORI OST - 064 Arachnophobia.mp3-b01e5703f9a78281c462718cd135fbd5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -64,7 +64,11 @@ func attack_state(delta):
 func attack_animation_finished():
 	state = MOVE
 
+
 func _on_Hurtbox_area_entered(area):
-	stats.health -= 23
-	hurtbox.start_invincibility(0.5)
-	hurtbox.create_hit_effect()
+	if area.is_in_group("hurt"):
+		stats.health -= 23
+		SoundPlayer.play("res://Sound/Undertale Sound Effect - Soul Damaged (mp3cut.net).mp3")
+		hurtbox.start_invincibility(0.5)
+		hurtbox.create_hit_effect()
+	

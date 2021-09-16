@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Undertale Sound Effect - Soul Damaged (mp3cut.net).mp3-ae97db780ec886eed62ef67dd9a4f931.mp3str"
+
+[deps]
+
+source_file="res://Sound/Undertale Sound Effect - Soul Damaged (mp3cut.net).mp3"
+dest_files=[ "res://.import/Undertale Sound Effect - Soul Damaged (mp3cut.net).mp3-ae97db780ec886eed62ef67dd9a4f931.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

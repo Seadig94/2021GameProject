@@ -1,0 +1,144 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://36819127-dc9e33ea-1c9c-11e8-9a93-0d3c0a674f02.png" type="Texture" id=1]
+[ext_resource path="res://Worlds/HerosHome.gd" type="Script" id=2]
+[ext_resource path="res://Sound/Low health sound.wav" type="AudioStream" id=5]
+[ext_resource path="res://Tree.tscn" type="PackedScene" id=12]
+[ext_resource path="res://UI/HeathUI.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Grass.tscn" type="PackedScene" id=15]
+[ext_resource path="res://FadeIn.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Bush.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Hero Portrait/Normal/frame_2_delay-0.2s.png" type="Texture" id=18]
+[ext_resource path="res://Hero Portrait/Normal/frame_0_delay-0.2s.png.png" type="Texture" id=19]
+[ext_resource path="res://Hero Portrait/Normal/HeroFrame.png" type="Texture" id=20]
+[ext_resource path="res://Hero Portrait/Hurt/HeroHurt.png" type="Texture" id=21]
+[ext_resource path="res://Hero Portrait/Dead/HeroDead.png" type="Texture" id=22]
+[ext_resource path="res://HeroFrame.gd" type="Script" id=23]
+[ext_resource path="res://UI/HeathUI.gd" type="Script" id=24]
+[ext_resource path="res://Hero Portrait/Normal/frame_1_delay-0.2s.png" type="Texture" id=28]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 21 )
+region = Rect2( 100, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 21 )
+region = Rect2( 200, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 22 )
+region = Rect2( 100, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 22 )
+region = Rect2( 200, 0, 100, 100 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "HeroHurt",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 28 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "HeroNormal",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "HeroDead",
+"speed": 5.0
+} ]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 104, 248 )
+scale = Vector2( 0.782396, 0.709434 )
+texture = ExtResource( 1 )
+offset = Vector2( 61.9165, -214.754 )
+region_enabled = true
+region_rect = Rect2( -1530, 460, 2360, 1760 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 160, 64 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
+remote_path = NodePath("../../../Camera2D")
+
+[node name="Bushes" type="YSort" parent="YSort"]
+
+[node name="Bush7" parent="YSort/Bushes" instance=ExtResource( 17 )]
+position = Vector2( 33.2977, -107.981 )
+
+[node name="Grass" type="YSort" parent="YSort"]
+
+[node name="Grass5" parent="YSort/Grass" instance=ExtResource( 15 )]
+position = Vector2( 376, 56 )
+
+[node name="Trees" type="YSort" parent="YSort"]
+
+[node name="Tree6" parent="YSort/Trees" instance=ExtResource( 12 )]
+position = Vector2( 392, -32 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeathUI" parent="CanvasLayer" instance=ExtResource( 13 )]
+margin_left = 138.254
+margin_top = 165.188
+margin_right = 226.253
+margin_bottom = 179.188
+rect_scale = Vector2( 0.833, 0.4 )
+script = ExtResource( 24 )
+
+[node name="FadeIn" parent="CanvasLayer" instance=ExtResource( 16 )]
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+margin_top = -90.0
+margin_bottom = -90.0
+
+[node name="ColorRect" parent="CanvasLayer/FadeIn/MarginContainer" index="0"]
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="HeroFrame" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 159.288, 140.778 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 20 )
+script = ExtResource( 23 )
+
+[node name="HeroPortrait" type="AnimatedSprite" parent="CanvasLayer/HeroFrame"]
+position = Vector2( -0.44445, 18.0002 )
+scale = Vector2( 1.86223, 1.75112 )
+frames = SubResource( 7 )
+animation = "HeroNormal"
+frame = 1
+playing = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 160, 64 )
+current = true
+zoom = Vector2( 1.1, 1.1 )
+smoothing_enabled = true
+smoothing_speed = 10.0
+
+[node name="AudioEffects" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioEffects"]
+stream = ExtResource( 5 )
+
+[editable path="CanvasLayer/FadeIn"]

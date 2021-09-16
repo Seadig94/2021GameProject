@@ -28,7 +28,7 @@
 [ext_resource path="res://Resources/World/CliffTileset.png" type="Texture" id=26]
 [ext_resource path="res://Resources/World/GrassBackground.png" type="Texture" id=27]
 [ext_resource path="res://Hero Portrait/Normal/frame_1_delay-0.2s.png" type="Texture" id=28]
-[ext_resource path="res://UI/EmiliaHealth.gd" type="Script" id=29]
+[ext_resource path="res://Worlds/World.gd" type="Script" id=29]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -617,34 +617,34 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 2/z_index = 0
 
 [sub_resource type="AtlasTexture" id=55]
-atlas = ExtResource( 22 )
+atlas = ExtResource( 21 )
 region = Rect2( 0, 0, 100, 100 )
 
 [sub_resource type="AtlasTexture" id=56]
-atlas = ExtResource( 22 )
+atlas = ExtResource( 21 )
 region = Rect2( 100, 0, 100, 100 )
 
 [sub_resource type="AtlasTexture" id=57]
-atlas = ExtResource( 22 )
+atlas = ExtResource( 21 )
 region = Rect2( 200, 0, 100, 100 )
 
 [sub_resource type="AtlasTexture" id=58]
-atlas = ExtResource( 21 )
+atlas = ExtResource( 22 )
 region = Rect2( 0, 0, 100, 100 )
 
 [sub_resource type="AtlasTexture" id=59]
-atlas = ExtResource( 21 )
+atlas = ExtResource( 22 )
 region = Rect2( 100, 0, 100, 100 )
 
 [sub_resource type="AtlasTexture" id=60]
-atlas = ExtResource( 21 )
+atlas = ExtResource( 22 )
 region = Rect2( 200, 0, 100, 100 )
 
 [sub_resource type="SpriteFrames" id=61]
 animations = [ {
 "frames": [ SubResource( 55 ), SubResource( 56 ), SubResource( 57 ) ],
 "loop": true,
-"name": "HeroDead",
+"name": "HeroHurt",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 19 ), ExtResource( 28 ), ExtResource( 18 ) ],
@@ -654,7 +654,7 @@ animations = [ {
 }, {
 "frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ) ],
 "loop": true,
-"name": "HeroHurt",
+"name": "HeroDead",
 "speed": 5.0
 } ]
 
@@ -719,6 +719,7 @@ animations = [ {
 } ]
 
 [node name="World" type="Node2D"]
+script = ExtResource( 29 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 104, 248 )
@@ -936,7 +937,6 @@ margin_top = 165.015
 margin_right = 146.758
 margin_bottom = 179.015
 rect_scale = Vector2( 0.636, 0.4 )
-script = ExtResource( 29 )
 
 [node name="KevHealth" parent="CanvasLayer" instance=ExtResource( 13 )]
 margin_left = 100.744
@@ -974,7 +974,6 @@ position = Vector2( -0.44445, 18.0002 )
 scale = Vector2( 1.86223, 1.75112 )
 frames = SubResource( 61 )
 animation = "HeroNormal"
-frame = 2
 playing = true
 
 [node name="EmiliaFrame" type="Sprite" parent="CanvasLayer"]
@@ -987,7 +986,7 @@ position = Vector2( -0.444, 18 )
 scale = Vector2( 1.862, 1.751 )
 frames = SubResource( 65 )
 animation = "EmiliaNormal"
-frame = 1
+frame = 2
 playing = true
 
 [node name="KevFrame" type="Sprite" parent="CanvasLayer"]
@@ -1000,6 +999,7 @@ position = Vector2( -0.444, 18 )
 scale = Vector2( 1.862, 1.751 )
 frames = SubResource( 69 )
 animation = "KevNormal"
+frame = 1
 playing = true
 
 [node name="YuFrame" type="Sprite" parent="CanvasLayer"]
@@ -1012,7 +1012,7 @@ position = Vector2( -0.444, 18 )
 scale = Vector2( 1.862, 1.751 )
 frames = SubResource( 73 )
 animation = "YuNormal"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

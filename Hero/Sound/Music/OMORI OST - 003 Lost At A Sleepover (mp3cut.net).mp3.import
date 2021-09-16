@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/OMORI OST - 003 Lost At A Sleepover (mp3cut.net).mp3-184838c3891efd334aceb08d2d336290.mp3str"
+
+[deps]
+
+source_file="res://Sound/Music/OMORI OST - 003 Lost At A Sleepover (mp3cut.net).mp3"
+dest_files=[ "res://.import/OMORI OST - 003 Lost At A Sleepover (mp3cut.net).mp3-184838c3891efd334aceb08d2d336290.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

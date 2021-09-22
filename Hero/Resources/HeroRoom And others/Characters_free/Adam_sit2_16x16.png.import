@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Room_Builder_free_16x16.png-9716a97069f6c9db10138a702abd126c.stex"
+path="res://.import/Adam_sit2_16x16.png-8c5bc322d6aecd437e52112e2d2857ed.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/HeroRoom And others/Room_Builder_free_16x16.png"
-dest_files=[ "res://.import/Room_Builder_free_16x16.png-9716a97069f6c9db10138a702abd126c.stex" ]
+source_file="res://Resources/HeroRoom And others/Characters_free/Adam_sit2_16x16.png"
+dest_files=[ "res://.import/Adam_sit2_16x16.png-8c5bc322d6aecd437e52112e2d2857ed.stex" ]
 
 [params]
 

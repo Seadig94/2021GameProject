@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Interiors_free_16x16.png-194c778674a33c8290582edf3f5e254e.stex"
+path="res://.import/Alex_sit_16x16.png-ce835ba46bcac4c5b9d7d6f62a673bca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/HeroRoom And others/Interiors_free_16x16.png"
-dest_files=[ "res://.import/Interiors_free_16x16.png-194c778674a33c8290582edf3f5e254e.stex" ]
+source_file="res://Resources/HeroRoom And others/Characters_free/Alex_sit_16x16.png"
+dest_files=[ "res://.import/Alex_sit_16x16.png-ce835ba46bcac4c5b9d7d6f62a673bca.stex" ]
 
 [params]
 

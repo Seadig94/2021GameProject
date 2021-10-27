@@ -6,4 +6,4 @@ func _ready():
 
 
 func _on_ThingSound_finished():
-		get_tree().change_scene("res://Worlds/World.tscn")
+		get_tree().change_scene("res://Worlds/HerosHome.tscn")

@@ -430,14 +430,14 @@ animations = [ {
 "name": "HeroHurt",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
-"loop": true,
-"name": "HeroDead",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 19 ), ExtResource( 28 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "HeroNormal",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "HeroDead",
 "speed": 5.0
 } ]
 
@@ -522,7 +522,6 @@ position = Vector2( -0.44445, 18.0002 )
 scale = Vector2( 1.86223, 1.75112 )
 frames = SubResource( 14 )
 animation = "HeroNormal"
-frame = 2
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

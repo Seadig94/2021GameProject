@@ -648,14 +648,14 @@ animations = [ {
 "name": "HeroHurt",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ) ],
-"loop": true,
-"name": "HeroDead",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 19 ), ExtResource( 28 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "HeroNormal",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ) ],
+"loop": true,
+"name": "HeroDead",
 "speed": 5.0
 } ]
 
